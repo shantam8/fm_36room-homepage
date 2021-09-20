@@ -1,16 +1,270 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+@-webkit-keyframes moveOutToLeft {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+@keyframes moveOutToLeft {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+}
+
+@-webkit-keyframes moveInFromLeft {
+  from {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes moveInFromLeft {
+  from {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes moveOutToRight {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@keyframes moveOutToRight {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@-webkit-keyframes moveInFromRight {
+  from {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes moveInFromRight {
+  from {
+    -webkit-transform: translateX(-100vw);
+            transform: translateX(-100vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 1;
+  }
+  99% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+  }
+  99% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeInBackdrop {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeInBackdrop {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 0.6;
+  }
+}
+
+@-webkit-keyframes fadeOutBackdrop {
+  0% {
+    display: block;
+    opacity: 0.6;
+  }
+  99% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutBackdrop {
+  0% {
+    display: block;
+    opacity: 0.6;
+  }
+  99% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
 header {
-  padding: 1rem;
-  border: 1px solid red;
+  position: absolute;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3rem 2rem;
+}
+
+header.isOpen {
+  position: absolute;
+  z-index: 7;
+  background-color: white;
+  opacity: 0;
+}
+
+header.isOpen .logo,
+header.isOpen .emptyDiv {
+  display: none;
+}
+
+header .logo {
+  position: relative;
+  z-index: 11;
 }
 
 header #btnMobileMenu {
+  position: relative;
+  display: inline-block;
   width: 20px;
   height: 20px;
   background-image: url("../images/icon-hamburger.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
+  z-index: 10;
+}
+
+header nav {
+  position: relative;
+  z-index: 10;
 }
 
 header nav ul {
@@ -20,8 +274,137 @@ header nav ul {
 }
 
 header nav a {
-  padding: 1rem;
+  padding: 0.8rem 0.5rem;
   text-transform: lowercase;
+  font-size: 0.8rem;
+}
+
+header .emptyDiv {
+  width: 20px;
+}
+
+#slider #sliderImageBox {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 50vh;
+}
+
+#slider #sliderImage1 {
+  background-image: url("../images/mobile-image-hero-1.jpg");
+}
+
+#slider #sliderImage2 {
+  background-image: url("../images/mobile-image-hero-2.jpg");
+}
+
+#slider #sliderImage3 {
+  background-image: url("../images/mobile-image-hero-3.jpg");
+}
+
+#slider .sliderImage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+}
+
+#slider .sliderImage.moveOutToLeft {
+  -webkit-animation: moveOutToLeft 3s ease-in-out forwards;
+          animation: moveOutToLeft 3s ease-in-out forwards;
+}
+
+#slider .sliderImage.moveInFromLeft {
+  -webkit-animation: moveInFromLeft 3s ease-in-out forwards;
+          animation: moveInFromLeft 3s ease-in-out forwards;
+}
+
+#slider .sliderImage.moveOutToRight {
+  -webkit-animation: moveOutToRight 3s ease-in-out forwards;
+          animation: moveOutToRight 3s ease-in-out forwards;
+}
+
+#slider .sliderImage.moveInFromRight {
+  -webkit-animation: moveInFromRight 3s ease-in-out forwards;
+          animation: moveInFromRight 3s ease-in-out forwards;
+}
+
+#slider .slideText {
+  padding: 4rem 2rem;
+}
+
+#slider .slideText h1 {
+  font-size: 1.5rem;
+}
+
+#slider .slideText p {
+  margin-top: 1.5rem;
+}
+
+#slider .slideText a {
+  display: inline-block;
+  margin-top: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+#slider .slideText a img {
+  padding-left: 2rem;
+}
+
+#slider .btnSliderLeft {
+  background-image: url("../images/icon-angle-left.svg");
+  right: 70px;
+}
+
+#slider .btnSliderRight {
+  background-image: url("../images/icon-angle-right.svg");
+  right: 0;
+}
+
+#slider .btnSlider {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+
+#bottom #imgDarkBox {
+  background-image: url("../images/image-about-dark.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 40vh;
+}
+
+#bottom #about {
+  padding: 4rem 2rem;
+}
+
+#bottom #about h2 {
+  font-size: 0.9rem;
+}
+
+#bottom #about p {
+  margin-top: 1.2rem;
+}
+
+#bottom #imgLightBox {
+  background-image: url("../images/image-about-light.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 40vh;
 }
 
 * {
@@ -38,7 +421,8 @@ a {
   font-family: "Spartan", sans-serif;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 700;
 }
 
@@ -50,15 +434,46 @@ h2 {
 a {
   font-weight: 600;
   text-decoration: none;
+  color: black;
 }
 
 p {
   color: #a1a1a1;
   font-weight: 500;
+  line-height: 1.4rem;
+  font-size: 0.8rem;
 }
 
 li {
   list-style-type: none;
+}
+
+#backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #a1a1a1;
+  opacity: 0;
+  z-index: 5;
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 2s forwards;
+          animation: fadeIn 2s forwards;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 2s forwards;
+          animation: fadeOut 2s forwards;
+}
+
+.fadeInBackdrop {
+  -webkit-animation: fadeInBackdrop 2s forwards;
+          animation: fadeInBackdrop 2s forwards;
+}
+
+.fadeOutBackdrop {
+  -webkit-animation: fadeOutBackdrop 2s forwards;
+          animation: fadeOutBackdrop 2s forwards;
 }
 
 .displayNone {
@@ -70,6 +485,6 @@ li {
 }
 
 body {
-  background-color: wheat;
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */

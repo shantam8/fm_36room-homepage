@@ -1,0 +1,91 @@
+#slider {
+  #sliderImageBox {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 50vh;
+  }
+
+  #sliderImage1 {
+    background-image: url("../images/mobile-image-hero-1.jpg");
+  }
+
+  #sliderImage2 {
+    background-image: url("../images/mobile-image-hero-2.jpg");
+  }
+
+  #sliderImage3 {
+    background-image: url("../images/mobile-image-hero-3.jpg");
+  }
+
+  .sliderImage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+
+    &.moveOutToLeft {
+      animation: moveOutToLeft 3s ease-in-out forwards;
+    }
+
+    &.moveInFromLeft {
+      animation: moveInFromLeft 3s ease-in-out forwards;
+    }
+
+    &.moveOutToRight {
+      animation: moveOutToRight 3s ease-in-out forwards;
+    }
+
+    &.moveInFromRight {
+      animation: moveInFromRight 3s ease-in-out forwards;
+    }
+  }
+
+  .slideText {
+    padding: 4rem 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      margin-top: 1.5rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+
+      img {
+        padding-left: 2rem;
+      }
+    }
+  }
+
+  .btnSliderLeft {
+    background-image: url("../images/icon-angle-left.svg");
+    right: 70px;
+  }
+
+  .btnSliderRight {
+    background-image: url("../images/icon-angle-right.svg");
+    right: 0;
+  }
+
+  .btnSlider {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    background-color: $black;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+  }
+}
