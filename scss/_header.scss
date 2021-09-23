@@ -5,21 +5,25 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 3rem 2rem;
+  transition: all 3s ease-in-out;
+  background-color: transparent;
+  z-index: 7;
 
   &.isOpen {
-    position: absolute;
-    z-index: 7;
     background-color: $white;
-    opacity: 0;
-    .logo,
-    .emptyDiv {
-      display: none;
-    }
+
+    // .logo,
+    // .emptyDiv {
+    //   display: none;
+    // }
   }
 
   .logo{
-    position: relative;
-    z-index: 11;
+    position: absolute;
+    top:3rem;
+    left: 50%;
+    margin-left: -31px;
+    z-index: 3;
   }
 
   #btnMobileMenu {

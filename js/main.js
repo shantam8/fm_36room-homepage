@@ -17,54 +17,52 @@ let activeSlide = 0;
 let nextSlide;
 
 function toggleMobileMenu() {
-  if (!mobileMenuTimer && isMobileMenuOpen) {
-    // zumachen
-    header.classList.remove("fadeIn");
-    backdrop.classList.remove("fadeIn");
-    mainNavBar.classList.remove("fadeIn");
+  if (mobileMenuTimer == null) {
+    if (isMobileMenuOpen) {
+      // zumachen
+      header.classList.remove("isOpen");
+      body.classList.remove("overflowHidden");
+      backdrop.classList.remove("fadeInBackdrop");
+      backdrop.classList.add("fadeOutBackdrop");
+      btnMobileMenu.style.backgroundImage =
+        'url("./images/icon-hamburger.svg")';
+      btnMobileMenu.setAttribute("aria-Label", "open menu");
+      mainNavBar.classList.add("fadeOut");
+      mainNavBar.classList.remove("fadeIn");
 
-    header.classList.add("fadeOut");
-    body.classList.remove("overflowHidden");
-    backdrop.classList.add("fadeOutBackdrop");
-    btnMobileMenu.style.backgroundImage = 'url("../images/icon-hamburger.svg")';
-    mainNavBar.classList.add("fadeOut");
-    btnMobileMenu.setAttribute("aria-Label", "open menu");
-    header.classList.remove("isOpen");
-
-    mobileMenuTimer = setTimeout(() => {
-      backdrop.classList.remove("fadeOutBackdrop");
-      backdrop.classList.add("displayNone");
-      header.classList.remove("fadeIn");
-      header.classList.remove("fadeOut");
-      mainNavBar.classList.add("displayNone");
-      mainNavBar.classList.remove("fadeOut");
-      mobileMenuTimer = "";
-    }, 2000);
-  } else {
-    //aufmachen
-
-    header.classList.add("isOpen");
-    header.classList.add("fadeIn");
-    body.classList.add("overflowHidden");
-    backdrop.classList.remove("displayNone");
-    backdrop.classList.add("fadeInBackdrop");
-    btnMobileMenu.style.backgroundImage = 'url("../images/icon-close.svg")';
-    mainNavBar.classList.remove("displayNone");
-    mainNavBar.classList.add("fadeIn");
-    btnMobileMenu.setAttribute("aria-Label", "close menu");
-    mobileMenuTimer = setTimeout(() => {
-      mobileMenuTimer = "";
-    }, 2000);
+      mobileMenuTimer = setTimeout(() => {
+        console.log("timer zu");
+        backdrop.classList.remove("fadeOutBackdrop");
+        backdrop.classList.add("displayNone");
+        mainNavBar.classList.add("displayNone");
+        mainNavBar.classList.remove("fadeOut");
+        document.querySelector(".emptyDiv").style.display = "block";
+        mobileMenuTimer = null;
+      }, 2000);
+    } else {
+      //aufmachen
+      document.querySelector(".emptyDiv").style.display = "none";
+      header.classList.add("isOpen");
+      body.classList.add("overflowHidden");
+      backdrop.classList.remove("displayNone");
+      backdrop.classList.add("fadeInBackdrop");
+      btnMobileMenu.style.backgroundImage = 'url("./images/icon-close.svg")';
+      btnMobileMenu.setAttribute("aria-Label", "close menu");
+      mainNavBar.classList.remove("displayNone");
+      mainNavBar.classList.add("fadeIn");
+      mobileMenuTimer = setTimeout(() => {
+        mobileMenuTimer = null;
+      }, 2000);
+    }
+    isMobileMenuOpen = !isMobileMenuOpen;
   }
-
-  isMobileMenuOpen = !isMobileMenuOpen;
 }
 
 function changeSlide(event) {
   console.log(activeSlide);
   if (
     !sliderTimer &&
-    event.target.classList.contains("btnSliderLeft") &&
+    event.target.classList.contains("btnSliderRight") &&
     activeSlide < 2
   ) {
     //links
@@ -84,7 +82,7 @@ function changeSlide(event) {
 
   if (
     !sliderTimer &&
-    event.target.classList.contains("btnSliderRight") &&
+    event.target.classList.contains("btnSliderLeft") &&
     activeSlide > 0
   ) {
     nextSlide = activeSlide - 1;

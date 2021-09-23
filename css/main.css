@@ -231,23 +231,23 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 3rem 2rem;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+  background-color: transparent;
+  z-index: 7;
 }
 
 header.isOpen {
-  position: absolute;
-  z-index: 7;
   background-color: white;
-  opacity: 0;
-}
-
-header.isOpen .logo,
-header.isOpen .emptyDiv {
-  display: none;
 }
 
 header .logo {
-  position: relative;
-  z-index: 11;
+  position: absolute;
+  width: 62px;
+  top: 3rem;
+  left: 50%;
+  margin-left: -31px;
+  z-index: 3;
 }
 
 header #btnMobileMenu {
