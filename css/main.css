@@ -805,7 +805,13 @@ header .emptyDiv {
 
 @media screen and (min-width: 70rem) {
   #bottom #about {
-    padding-top: 4rem;
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  #bottom #about {
+    padding: 5rem;
   }
 }
 

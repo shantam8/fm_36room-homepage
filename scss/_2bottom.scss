@@ -25,11 +25,17 @@
     @media screen and (min-width: 60rem) {
       padding-top: 2rem;
     }
+
     @media screen and (min-width: 64rem) {
       padding-top: 3rem;
     }
+
     @media screen and (min-width: 70rem) {
-      padding-top: 4rem;
+      padding: 4rem;
+    }
+
+    @media screen and (min-width: 80rem) {
+      padding: 5rem;
     }
 
     h2 {
