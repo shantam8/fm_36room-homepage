@@ -33,7 +33,6 @@ a {
   font-weight: 600;
   text-decoration: none;
   color: $black;
-
 }
 
 p {
@@ -45,6 +44,7 @@ p {
 
 li {
   list-style-type: none;
+  
 }
 
 #backdrop {
@@ -55,20 +55,20 @@ li {
   z-index: 5;
 }
 
-.fadeIn{
-  animation: fadeIn 2s forwards;
+.fadeIn {
+  animation: fadeIn 1s forwards;
 }
 
-.fadeOut{
-  animation: fadeOut 2s forwards;
+.fadeOut {
+  animation: fadeOut 1s forwards;
 }
 
-.fadeInBackdrop{
-  animation: fadeInBackdrop 2s forwards;
+.fadeInBackdrop {
+  animation: fadeInBackdrop 1s forwards;
 }
 
-.fadeOutBackdrop{
-  animation: fadeOutBackdrop 2s forwards;
+.fadeOutBackdrop {
+  animation: fadeOutBackdrop 1s forwards;
 }
 
 .displayNone {
@@ -81,4 +81,8 @@ li {
 
 body {
   position: relative;
+
+  @media screen and (min-width: 60rem) {
+    overflow: hidden;
+  }
 }

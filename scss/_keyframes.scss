@@ -1,4 +1,4 @@
-@keyframes moveOutToLeft {
+@keyframes moveOutToLeftMobile {
   from {
     transform: translateX(0px);
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes moveInFromLeft {
+@keyframes moveInFromLeftMobile {
   from {
     transform: translateX(100vw);
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes moveOutToRight {
+@keyframes moveOutToRightMobile {
   from {
     transform: translateX(0px);
   }
@@ -25,7 +25,7 @@
   }
 }
 
-@keyframes moveInFromRight {
+@keyframes moveInFromRightMobile {
   from {
     transform: translateX(-100vw);
   }
@@ -33,6 +33,46 @@
     transform: translateX(0px);
   }
 }
+
+
+
+@keyframes moveOutToLeftDesktop{
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-58.3vw);
+  }
+}
+
+@keyframes moveInFromLeftDesktop {
+  from {
+    transform: translateX(58.3vw);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveOutToRightDesktop {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(58.3vw);
+  }
+}
+
+@keyframes moveInFromRightDesktop {
+  from {
+    transform: translateX(-58.3vw);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+
 
 @keyframes fadeIn {
   0% {

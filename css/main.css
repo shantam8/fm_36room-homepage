@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
-@-webkit-keyframes moveOutToLeft {
+@-webkit-keyframes moveOutToLeftMobile {
   from {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
@@ -9,7 +9,7 @@
             transform: translateX(-100vw);
   }
 }
-@keyframes moveOutToLeft {
+@keyframes moveOutToLeftMobile {
   from {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
@@ -20,7 +20,7 @@
   }
 }
 
-@-webkit-keyframes moveInFromLeft {
+@-webkit-keyframes moveInFromLeftMobile {
   from {
     -webkit-transform: translateX(100vw);
             transform: translateX(100vw);
@@ -31,7 +31,7 @@
   }
 }
 
-@keyframes moveInFromLeft {
+@keyframes moveInFromLeftMobile {
   from {
     -webkit-transform: translateX(100vw);
             transform: translateX(100vw);
@@ -42,7 +42,7 @@
   }
 }
 
-@-webkit-keyframes moveOutToRight {
+@-webkit-keyframes moveOutToRightMobile {
   from {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
@@ -53,7 +53,7 @@
   }
 }
 
-@keyframes moveOutToRight {
+@keyframes moveOutToRightMobile {
   from {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
@@ -64,7 +64,7 @@
   }
 }
 
-@-webkit-keyframes moveInFromRight {
+@-webkit-keyframes moveInFromRightMobile {
   from {
     -webkit-transform: translateX(-100vw);
             transform: translateX(-100vw);
@@ -75,10 +75,98 @@
   }
 }
 
-@keyframes moveInFromRight {
+@keyframes moveInFromRightMobile {
   from {
     -webkit-transform: translateX(-100vw);
             transform: translateX(-100vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes moveOutToLeftDesktop {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-58.3vw);
+            transform: translateX(-58.3vw);
+  }
+}
+
+@keyframes moveOutToLeftDesktop {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-58.3vw);
+            transform: translateX(-58.3vw);
+  }
+}
+
+@-webkit-keyframes moveInFromLeftDesktop {
+  from {
+    -webkit-transform: translateX(58.3vw);
+            transform: translateX(58.3vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes moveInFromLeftDesktop {
+  from {
+    -webkit-transform: translateX(58.3vw);
+            transform: translateX(58.3vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes moveOutToRightDesktop {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(58.3vw);
+            transform: translateX(58.3vw);
+  }
+}
+
+@keyframes moveOutToRightDesktop {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(58.3vw);
+            transform: translateX(58.3vw);
+  }
+}
+
+@-webkit-keyframes moveInFromRightDesktop {
+  from {
+    -webkit-transform: translateX(-58.3vw);
+            transform: translateX(-58.3vw);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes moveInFromRightDesktop {
+  from {
+    -webkit-transform: translateX(-58.3vw);
+            transform: translateX(-58.3vw);
   }
   to {
     -webkit-transform: translateX(0px);
@@ -231,8 +319,8 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 3rem 2rem;
-  -webkit-transition: all 3s ease-in-out;
-  transition: all 3s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
   background-color: transparent;
   z-index: 7;
 }
@@ -243,11 +331,17 @@ header.isOpen {
 
 header .logo {
   position: absolute;
-  width: 62px;
   top: 3rem;
   left: 50%;
   margin-left: -31px;
   z-index: 3;
+}
+
+@media screen and (min-width: 30rem) {
+  header .logo {
+    left: 0;
+    margin-left: 2rem;
+  }
 }
 
 header #btnMobileMenu {
@@ -262,9 +356,21 @@ header #btnMobileMenu {
   z-index: 10;
 }
 
+@media screen and (min-width: 30rem) {
+  header #btnMobileMenu {
+    display: none;
+  }
+}
+
 header nav {
   position: relative;
   z-index: 10;
+}
+
+@media screen and (min-width: 30rem) {
+  header nav {
+    margin-left: 7rem;
+  }
 }
 
 header nav ul {
@@ -273,67 +379,221 @@ header nav ul {
   display: flex;
 }
 
+@media screen and (min-width: 30rem) {
+  header nav li {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+}
+
 header nav a {
   padding: 0.8rem 0.5rem;
   text-transform: lowercase;
   font-size: 0.8rem;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+header nav a:hover, header nav a:focus {
+  cursor: pointer;
+}
+
+header nav a:hover::after, header nav a:focus::after {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 3px;
+  left: 18px;
+  right: 18px;
+  background-color: black;
+}
+
+header nav a:active {
+  color: #a1a1a1;
+}
+
+header nav a:active::after {
+  background-color: #a1a1a1;
+}
+
+@media screen and (min-width: 30rem) {
+  header nav a {
+    color: white;
+  }
+  header nav a:hover, header nav a:focus {
+    cursor: pointer;
+  }
+  header nav a:hover::after, header nav a:focus::after {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 3px;
+    left: 18px;
+    right: 18px;
+    background-color: white;
+  }
+  header nav a:active {
+    color: #454545;
+  }
+  header nav a:active::after {
+    background-color: #454545;
+  }
 }
 
 header .emptyDiv {
   width: 20px;
 }
 
+@media screen and (min-width: 60rem) {
+  #slider {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 58.4vw 41.7vw;
+        grid-template-columns: 58.4vw 41.7vw;
+    -ms-grid-rows: 66.75vh;
+        grid-template-rows: 66.75vh;
+  }
+}
+
 #slider #sliderImageBox {
   position: relative;
   overflow: hidden;
   width: 100vw;
-  height: 50vh;
+  height: 109vw;
+}
+
+@media screen and (min-width: 40rem) {
+  #slider #sliderImageBox {
+    height: 64vw;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #slider #sliderImageBox {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 #slider #sliderImage1 {
   background-image: url("../images/mobile-image-hero-1.jpg");
 }
 
+@media screen and (min-width: 40rem) {
+  #slider #sliderImage1 {
+    background-image: url("../images/desktop-image-hero-1.jpg");
+  }
+}
+
 #slider #sliderImage2 {
   background-image: url("../images/mobile-image-hero-2.jpg");
+}
+
+@media screen and (min-width: 40rem) {
+  #slider #sliderImage2 {
+    background-image: url("../images/desktop-image-hero-2.jpg");
+  }
 }
 
 #slider #sliderImage3 {
   background-image: url("../images/mobile-image-hero-3.jpg");
 }
 
+@media screen and (min-width: 40rem) {
+  #slider #sliderImage3 {
+    background-image: url("../images/desktop-image-hero-3.jpg");
+  }
+}
+
 #slider .sliderImage {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 50vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
 }
 
-#slider .sliderImage.moveOutToLeft {
-  -webkit-animation: moveOutToLeft 3s ease-in-out forwards;
-          animation: moveOutToLeft 3s ease-in-out forwards;
+#slider #sliderTextBox {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 120vw;
 }
 
-#slider .sliderImage.moveInFromLeft {
-  -webkit-animation: moveInFromLeft 3s ease-in-out forwards;
-          animation: moveInFromLeft 3s ease-in-out forwards;
+@media screen and (min-width: 25rem) {
+  #slider #sliderTextBox {
+    height: 108vw;
+  }
 }
 
-#slider .sliderImage.moveOutToRight {
-  -webkit-animation: moveOutToRight 3s ease-in-out forwards;
-          animation: moveOutToRight 3s ease-in-out forwards;
+@media screen and (min-width: 30rem) {
+  #slider #sliderTextBox {
+    height: 83vw;
+  }
 }
 
-#slider .sliderImage.moveInFromRight {
-  -webkit-animation: moveInFromRight 3s ease-in-out forwards;
-          animation: moveInFromRight 3s ease-in-out forwards;
+@media screen and (min-width: 35rem) {
+  #slider #sliderTextBox {
+    height: 62vw;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  #slider #sliderTextBox {
+    height: 50vw;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  #slider #sliderTextBox {
+    height: 42vw;
+  }
+}
+
+@media screen and (min-width: 50rem) {
+  #slider #sliderTextBox {
+    height: 38vw;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #slider #sliderTextBox {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 #slider .slideText {
   padding: 4rem 2rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .slideText {
+    padding: 6rem 4rem;
+  }
+}
+
+@media screen and (min-width: 70rem) {
+  #slider .slideText {
+    padding: 6rem 5rem;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  #slider .slideText {
+    padding: 6rem;
+  }
 }
 
 #slider .slideText h1 {
@@ -349,20 +609,82 @@ header .emptyDiv {
   margin-top: 4rem;
   text-transform: uppercase;
   letter-spacing: 8px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-#slider .slideText a img {
-  padding-left: 2rem;
+#slider .slideText a:hover, #slider .slideText a:focus {
+  cursor: pointer;
+  color: #a1a1a1;
 }
 
-#slider .btnSliderLeft {
-  background-image: url("../images/icon-angle-left.svg");
-  right: 70px;
+#slider .slideText a:hover svg path, #slider .slideText a:focus svg path {
+  fill: #a1a1a1;
 }
 
-#slider .btnSliderRight {
-  background-image: url("../images/icon-angle-right.svg");
-  right: 0;
+#slider .slideText a:active {
+  color: #454545;
+}
+
+#slider .slideText a:active svg path {
+  fill: #454545;
+}
+
+#slider .slideText a svg {
+  margin-left: 2rem;
+}
+
+#slider .slideText a path {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#slider .moveOutToLeftMobile {
+  -webkit-animation: moveOutToLeftMobile 2s ease-in-out forwards;
+          animation: moveOutToLeftMobile 2s ease-in-out forwards;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .moveOutToLeftMobile {
+    -webkit-animation: moveOutToLeftDesktop 2s ease-in-out forwards;
+            animation: moveOutToLeftDesktop 2s ease-in-out forwards;
+  }
+}
+
+#slider .moveInFromLeftMobile {
+  -webkit-animation: moveInFromLeftMobile 2s ease-in-out forwards;
+          animation: moveInFromLeftMobile 2s ease-in-out forwards;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .moveInFromLeftMobile {
+    -webkit-animation: moveInFromLeftDesktop 2s ease-in-out forwards;
+            animation: moveInFromLeftDesktop 2s ease-in-out forwards;
+  }
+}
+
+#slider .moveOutToRightMobile {
+  -webkit-animation: moveOutToRightMobile 2s ease-in-out forwards;
+          animation: moveOutToRightMobile 2s ease-in-out forwards;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .moveOutToRightMobile {
+    -webkit-animation: moveOutToRightDesktop 2s ease-in-out forwards;
+            animation: moveOutToRightDesktop 2s ease-in-out forwards;
+  }
+}
+
+#slider .moveInFromRightMobile {
+  -webkit-animation: moveInFromRightMobile 2s ease-in-out forwards;
+          animation: moveInFromRightMobile 2s ease-in-out forwards;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .moveInFromRightMobile {
+    -webkit-animation: moveInFromRightDesktop 2s ease-in-out forwards;
+            animation: moveInFromRightDesktop 2s ease-in-out forwards;
+  }
 }
 
 #slider .btnSlider {
@@ -375,6 +697,78 @@ header .emptyDiv {
   position: absolute;
   bottom: 0;
   z-index: 3;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .btnSlider {
+    width: 5.6vw;
+    height: 5.6vw;
+  }
+}
+
+#slider .btnSlider:hover, #slider .btnSlider:focus {
+  cursor: pointer;
+  background-color: #454545;
+}
+
+#slider .btnSlider:active {
+  background-color: #a1a1a1;
+}
+
+#slider .btnSliderLeft {
+  background-image: url("../images/icon-angle-left.svg");
+  right: 70px;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .btnSliderLeft {
+    left: 0;
+    right: unset;
+  }
+}
+
+#slider .btnSliderRight {
+  background-image: url("../images/icon-angle-right.svg");
+  right: 0;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider .btnSliderRight {
+    left: 5.6vw;
+    right: unset;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #slider #btnSliderLeftMobile,
+  #slider #btnSliderLRightMobile {
+    display: none;
+  }
+}
+
+#slider #btnSliderLeftDesktop,
+#slider #btnSliderRightDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 60rem) {
+  #slider #btnSliderLeftDesktop,
+  #slider #btnSliderRightDesktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  #bottom {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 29.2vw 40.3vw 30.6vw;
+        grid-template-columns: 29.2vw 40.3vw 30.6vw;
+    -ms-grid-rows: 33.25vh;
+        grid-template-rows: 33.25vh;
+  }
 }
 
 #bottom #imgDarkBox {
@@ -386,8 +780,33 @@ header .emptyDiv {
   height: 40vh;
 }
 
+@media screen and (min-width: 60rem) {
+  #bottom #imgDarkBox {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 #bottom #about {
   padding: 4rem 2rem;
+}
+
+@media screen and (min-width: 60rem) {
+  #bottom #about {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  #bottom #about {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 70rem) {
+  #bottom #about {
+    padding-top: 4rem;
+  }
 }
 
 #bottom #about h2 {
@@ -405,6 +824,13 @@ header .emptyDiv {
   background-size: cover;
   width: 100vw;
   height: 40vh;
+}
+
+@media screen and (min-width: 60rem) {
+  #bottom #imgLightBox {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 * {
@@ -457,23 +883,23 @@ li {
 }
 
 .fadeIn {
-  -webkit-animation: fadeIn 2s forwards;
-          animation: fadeIn 2s forwards;
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
 }
 
 .fadeOut {
-  -webkit-animation: fadeOut 2s forwards;
-          animation: fadeOut 2s forwards;
+  -webkit-animation: fadeOut 1s forwards;
+          animation: fadeOut 1s forwards;
 }
 
 .fadeInBackdrop {
-  -webkit-animation: fadeInBackdrop 2s forwards;
-          animation: fadeInBackdrop 2s forwards;
+  -webkit-animation: fadeInBackdrop 1s forwards;
+          animation: fadeInBackdrop 1s forwards;
 }
 
 .fadeOutBackdrop {
-  -webkit-animation: fadeOutBackdrop 2s forwards;
-          animation: fadeOutBackdrop 2s forwards;
+  -webkit-animation: fadeOutBackdrop 1s forwards;
+          animation: fadeOutBackdrop 1s forwards;
 }
 
 .displayNone {
@@ -486,5 +912,11 @@ li {
 
 body {
   position: relative;
+}
+
+@media screen and (min-width: 60rem) {
+  body {
+    overflow: hidden;
+  }
 }
 /*# sourceMappingURL=main.css.map */

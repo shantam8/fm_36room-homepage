@@ -5,25 +5,25 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 3rem 2rem;
-  transition: all 3s ease-in-out;
+  transition: all 2s ease-in-out;
   background-color: transparent;
   z-index: 7;
 
   &.isOpen {
     background-color: $white;
-
-    // .logo,
-    // .emptyDiv {
-    //   display: none;
-    // }
   }
 
-  .logo{
+  .logo {
     position: absolute;
-    top:3rem;
+    top: 3rem;
     left: 50%;
     margin-left: -31px;
     z-index: 3;
+
+    @media screen and (min-width: 30rem) {
+      left: 0;
+      margin-left: 2rem;
+    }
   }
 
   #btnMobileMenu {
@@ -36,20 +36,89 @@ header {
     background-repeat: no-repeat;
     background-color: transparent;
     z-index: 10;
+
+    @media screen and (min-width: 30rem) {
+      display: none;
+    }
   }
 
   nav {
     position: relative;
     z-index: 10;
 
+    @media screen and (min-width: 30rem) {
+      margin-left: 7rem;
+    }
+
     ul {
       display: flex;
+    }
+
+    li {
+      @media screen and (min-width: 30rem) {
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+      }
     }
 
     a {
       padding: 0.8rem 0.5rem;
       text-transform: lowercase;
       font-size: 0.8rem;
+      position: relative;
+      transition: all 0.2s ease-in-out;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+
+        &::after {
+          transition: all 0.2s ease-in-out;
+          position: absolute;
+          content: "";
+          bottom: 0;
+          height: 3px;
+          left: 18px;
+          right: 18px;
+          background-color: $black;
+        }
+      }
+
+      &:active {
+        color: $darkGray;
+
+        &::after {
+          background-color: $darkGray;
+        }
+      }
+
+      @media screen and (min-width: 30rem) {
+        color: $white;
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+  
+          &::after {
+            transition: all 0.2s ease-in-out;
+            position: absolute;
+            content: "";
+            bottom: 0;
+            height: 3px;
+            left: 18px;
+            right: 18px;
+            background-color: $white;
+          }
+        }
+
+        &:active {
+          color: $veryDarkGray;
+  
+          &::after {
+            background-color: $veryDarkGray;
+          }
+        }
+      }
     }
   }
 
