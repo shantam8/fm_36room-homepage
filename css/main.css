@@ -309,19 +309,19 @@
 header {
   position: absolute;
   width: 100vw;
+  padding: 3rem 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 3rem 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
   -webkit-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  background-color: transparent;
   z-index: 7;
 }
 
@@ -349,10 +349,10 @@ header #btnMobileMenu {
   display: inline-block;
   width: 20px;
   height: 20px;
+  background-color: transparent;
   background-image: url("../images/icon-hamburger.svg");
   background-position: center;
   background-repeat: no-repeat;
-  background-color: transparent;
   z-index: 10;
 }
 
@@ -373,74 +373,74 @@ header nav {
   }
 }
 
-header nav ul {
+header ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 @media screen and (min-width: 30rem) {
-  header nav li {
+  header li {
     margin-left: 0.8rem;
     margin-right: 0.8rem;
   }
 }
 
-header nav a {
-  padding: 0.8rem 0.5rem;
-  text-transform: lowercase;
-  font-size: 0.8rem;
+header a {
   position: relative;
+  padding: 0.8rem 0.5rem;
+  font-size: 0.8rem;
+  text-transform: lowercase;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-header nav a:hover, header nav a:focus {
+header a:hover, header a:focus {
   cursor: pointer;
 }
 
-header nav a:hover::after, header nav a:focus::after {
+header a:hover::after, header a:focus::after {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   position: absolute;
   content: "";
-  bottom: 0;
   height: 3px;
   left: 18px;
   right: 18px;
+  bottom: 0;
   background-color: black;
 }
 
-header nav a:active {
+header a:active {
   color: #a1a1a1;
 }
 
-header nav a:active::after {
+header a:active::after {
   background-color: #a1a1a1;
 }
 
 @media screen and (min-width: 30rem) {
-  header nav a {
+  header a {
     color: white;
   }
-  header nav a:hover, header nav a:focus {
+  header a:hover, header a:focus {
     cursor: pointer;
   }
-  header nav a:hover::after, header nav a:focus::after {
+  header a:hover::after, header a:focus::after {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     position: absolute;
     content: "";
-    bottom: 0;
     height: 3px;
     left: 18px;
     right: 18px;
+    bottom: 0;
     background-color: white;
   }
-  header nav a:active {
+  header a:active {
     color: #454545;
   }
-  header nav a:active::after {
+  header a:active::after {
     background-color: #454545;
   }
 }
@@ -462,9 +462,9 @@ header .emptyDiv {
 
 #slider #sliderImageBox {
   position: relative;
-  overflow: hidden;
   width: 100vw;
   height: 109vw;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 40rem) {
@@ -478,6 +478,16 @@ header .emptyDiv {
     width: 100%;
     height: 100%;
   }
+}
+
+#slider .sliderImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #slider #sliderImage1 {
@@ -510,21 +520,11 @@ header .emptyDiv {
   }
 }
 
-#slider .sliderImage {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-
 #slider #sliderTextBox {
   position: relative;
-  overflow: hidden;
   width: 100vw;
   height: 120vw;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 25rem) {
@@ -596,15 +596,15 @@ header .emptyDiv {
   }
 }
 
-#slider .slideText h1 {
+#slider h1 {
   font-size: 1.5rem;
 }
 
-#slider .slideText p {
+#slider p {
   margin-top: 1.5rem;
 }
 
-#slider .slideText a {
+#slider a {
   display: inline-block;
   margin-top: 4rem;
   text-transform: uppercase;
@@ -613,28 +613,28 @@ header .emptyDiv {
   transition: all 0.2s ease-in-out;
 }
 
-#slider .slideText a:hover, #slider .slideText a:focus {
+#slider a:hover, #slider a:focus {
   cursor: pointer;
   color: #a1a1a1;
 }
 
-#slider .slideText a:hover svg path, #slider .slideText a:focus svg path {
+#slider a:hover svg path, #slider a:focus svg path {
   fill: #a1a1a1;
 }
 
-#slider .slideText a:active {
+#slider a:active {
   color: #454545;
 }
 
-#slider .slideText a:active svg path {
+#slider a:active svg path {
   fill: #454545;
 }
 
-#slider .slideText a svg {
+#slider a svg {
   margin-left: 2rem;
 }
 
-#slider .slideText a path {
+#slider a path {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -688,14 +688,14 @@ header .emptyDiv {
 }
 
 #slider .btnSlider {
-  background-repeat: no-repeat;
-  background-position: center;
+  position: absolute;
   width: 70px;
   height: 70px;
-  background-color: black;
-  border: none;
-  position: absolute;
   bottom: 0;
+  border: none;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 3;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -718,8 +718,8 @@ header .emptyDiv {
 }
 
 #slider .btnSliderLeft {
-  background-image: url("../images/icon-angle-left.svg");
   right: 70px;
+  background-image: url("../images/icon-angle-left.svg");
 }
 
 @media screen and (min-width: 60rem) {
@@ -730,8 +730,8 @@ header .emptyDiv {
 }
 
 #slider .btnSliderRight {
-  background-image: url("../images/icon-angle-right.svg");
   right: 0;
+  background-image: url("../images/icon-angle-right.svg");
 }
 
 @media screen and (min-width: 60rem) {
@@ -772,12 +772,12 @@ header .emptyDiv {
 }
 
 #bottom #imgDarkBox {
+  width: 100vw;
+  height: 40vh;
   background-image: url("../images/image-about-dark.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 40vh;
 }
 
 @media screen and (min-width: 60rem) {
@@ -818,12 +818,12 @@ header .emptyDiv {
 }
 
 #bottom #imgLightBox {
+  width: 100vw;
+  height: 40vh;
   background-image: url("../images/image-about-light.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
-  height: 40vh;
 }
 
 @media screen and (min-width: 60rem) {
