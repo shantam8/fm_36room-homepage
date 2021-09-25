@@ -197,8 +197,8 @@
     transition: all 0.2s ease-in-out;
 
     @media screen and (min-width: 60rem) {
-      width: 5.6vw;
-      height: 5.6vw;
+      width: 5.55vw;
+      height: 5.55vw;
     }
 
     &:hover,
@@ -226,13 +226,13 @@
     background-image: url("../images/icon-angle-right.svg");
 
     @media screen and (min-width: 60rem) {
-      left: 5.6vw;
+      left: 5.55vw;
       right: unset;
     }
   }
 
   #btnSliderLeftMobile,
-  #btnSliderLRightMobile {
+  #btnSliderRightMobile {
     @media screen and (min-width: 60rem) {
       display: none;
     }
