@@ -153,34 +153,34 @@
   }
 
   .moveOutToLeftMobile {
-    animation: moveOutToLeftMobile 2s ease-in-out forwards;
+    animation: moveOutToLeftMobile 1s ease-in-out forwards;
 
     @media screen and (min-width: 60rem) {
-      animation: moveOutToLeftDesktop 2s ease-in-out forwards;
+      animation: moveOutToLeftDesktop 1s ease-in-out forwards;
     }
   }
 
   .moveInFromLeftMobile {
-    animation: moveInFromLeftMobile 2s ease-in-out forwards;
+    animation: moveInFromLeftMobile 1s ease-in-out forwards;
 
     @media screen and (min-width: 60rem) {
-      animation: moveInFromLeftDesktop 2s ease-in-out forwards;
+      animation: moveInFromLeftDesktop 1s ease-in-out forwards;
     }
   }
 
   .moveOutToRightMobile {
-    animation: moveOutToRightMobile 2s ease-in-out forwards;
+    animation: moveOutToRightMobile 1s ease-in-out forwards;
 
     @media screen and (min-width: 60rem) {
-      animation: moveOutToRightDesktop 2s ease-in-out forwards;
+      animation: moveOutToRightDesktop 1s ease-in-out forwards;
     }
   }
 
   .moveInFromRightMobile {
-    animation: moveInFromRightMobile 2s ease-in-out forwards;
+    animation: moveInFromRightMobile 1s ease-in-out forwards;
 
     @media screen and (min-width: 60rem) {
-      animation: moveInFromRightDesktop 2s ease-in-out forwards;
+      animation: moveInFromRightDesktop 1s ease-in-out forwards;
     }
   }
 

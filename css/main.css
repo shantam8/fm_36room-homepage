@@ -320,8 +320,8 @@ header {
       -ms-flex-align: center;
           align-items: center;
   background-color: transparent;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   z-index: 7;
 }
 
@@ -349,6 +349,7 @@ header #btnMobileMenu {
   display: inline-block;
   width: 20px;
   height: 20px;
+  border: none;
   background-color: transparent;
   background-image: url("../images/icon-hamburger.svg");
   background-position: center;
@@ -640,50 +641,50 @@ header .emptyDiv {
 }
 
 #slider .moveOutToLeftMobile {
-  -webkit-animation: moveOutToLeftMobile 2s ease-in-out forwards;
-          animation: moveOutToLeftMobile 2s ease-in-out forwards;
+  -webkit-animation: moveOutToLeftMobile 1s ease-in-out forwards;
+          animation: moveOutToLeftMobile 1s ease-in-out forwards;
 }
 
 @media screen and (min-width: 60rem) {
   #slider .moveOutToLeftMobile {
-    -webkit-animation: moveOutToLeftDesktop 2s ease-in-out forwards;
-            animation: moveOutToLeftDesktop 2s ease-in-out forwards;
+    -webkit-animation: moveOutToLeftDesktop 1s ease-in-out forwards;
+            animation: moveOutToLeftDesktop 1s ease-in-out forwards;
   }
 }
 
 #slider .moveInFromLeftMobile {
-  -webkit-animation: moveInFromLeftMobile 2s ease-in-out forwards;
-          animation: moveInFromLeftMobile 2s ease-in-out forwards;
+  -webkit-animation: moveInFromLeftMobile 1s ease-in-out forwards;
+          animation: moveInFromLeftMobile 1s ease-in-out forwards;
 }
 
 @media screen and (min-width: 60rem) {
   #slider .moveInFromLeftMobile {
-    -webkit-animation: moveInFromLeftDesktop 2s ease-in-out forwards;
-            animation: moveInFromLeftDesktop 2s ease-in-out forwards;
+    -webkit-animation: moveInFromLeftDesktop 1s ease-in-out forwards;
+            animation: moveInFromLeftDesktop 1s ease-in-out forwards;
   }
 }
 
 #slider .moveOutToRightMobile {
-  -webkit-animation: moveOutToRightMobile 2s ease-in-out forwards;
-          animation: moveOutToRightMobile 2s ease-in-out forwards;
+  -webkit-animation: moveOutToRightMobile 1s ease-in-out forwards;
+          animation: moveOutToRightMobile 1s ease-in-out forwards;
 }
 
 @media screen and (min-width: 60rem) {
   #slider .moveOutToRightMobile {
-    -webkit-animation: moveOutToRightDesktop 2s ease-in-out forwards;
-            animation: moveOutToRightDesktop 2s ease-in-out forwards;
+    -webkit-animation: moveOutToRightDesktop 1s ease-in-out forwards;
+            animation: moveOutToRightDesktop 1s ease-in-out forwards;
   }
 }
 
 #slider .moveInFromRightMobile {
-  -webkit-animation: moveInFromRightMobile 2s ease-in-out forwards;
-          animation: moveInFromRightMobile 2s ease-in-out forwards;
+  -webkit-animation: moveInFromRightMobile 1s ease-in-out forwards;
+          animation: moveInFromRightMobile 1s ease-in-out forwards;
 }
 
 @media screen and (min-width: 60rem) {
   #slider .moveInFromRightMobile {
-    -webkit-animation: moveInFromRightDesktop 2s ease-in-out forwards;
-            animation: moveInFromRightDesktop 2s ease-in-out forwards;
+    -webkit-animation: moveInFromRightDesktop 1s ease-in-out forwards;
+            animation: moveInFromRightDesktop 1s ease-in-out forwards;
   }
 }
 

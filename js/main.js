@@ -87,7 +87,7 @@ function changeSlide(event) {
       activeSlide++;
       nextSlide = "";
       sliderTimer = "";
-    }, 2000);
+    }, 1000);
   }
 
   if (
@@ -116,31 +116,50 @@ function changeSlide(event) {
       activeSlide--;
       nextSlide = "";
       sliderTimer = "";
-    }, 2000);
+    }, 1000);
   }
 }
 
 function toggleMobileMenuOnResize() {
-  if (window.innerWidth >= 480) {
-    mainNavBar.classList.remove("displayNone");
-  } else{
-    if(!isMobileMenuOpen){
+  console.log("resizeFunction");
 
+  if (isMobileMenuOpen) {
+    console.log("1 ");
+
+    if (window.innerWidth >= 480) {
+      console.log("2 ");
+      isMobileMenuOpen = !isMobileMenuOpen;
+
+      body.classList.remove("overflowHidden");
+      header.classList.remove("isOpen");
+
+      btnMobileMenu.style.backgroundImage =
+        'url("./images/icon-hamburger.svg")';
+      btnMobileMenu.setAttribute("aria-Label", "open menu");
+
+      backdrop.classList.remove("fadeInBackdrop");      
+      backdrop.classList.add("displayNone");
+      mainNavBar.classList.remove("fadeIn");
+      mainNavBar.classList.remove("displayNone");
+      document.querySelector(".emptyDiv").style.display = "block";
+
+    } else {
+      console.log("3");
+    }
+  } else {
+    
+    if (window.innerWidth >= 480) {
+      console.log("4");
+      mainNavBar.classList.remove("displayNone");
+
+    }else{
+      
       mainNavBar.classList.add("displayNone");
+      console.log("5");
     }
 
   }
-  
-  console.log("resize");
-  if (isMobileMenuOpen && window.innerWidth >= 480) {
-    console.log("1" + isMobileMenuOpen + window.innerWidth);
-    toggleMobileMenu();
-    setTimeout(() => {
-      console.log("sad")
-      mainNavBar.classList.remove("displayNone");
-    }, 1100);
-
-  }
+  console.log("isopopen: " + isMobileMenuOpen);
 }
 
 function init() {
@@ -148,11 +167,11 @@ function init() {
   btnSlidersLeft.forEach((element) => {
     element.addEventListener("click", changeSlide);
   });
-  
+
   btnSlidersRight.forEach((element) => {
     element.addEventListener("click", changeSlide);
   });
-  
+
   window.addEventListener("resize", toggleMobileMenuOnResize);
 
   if (window.innerWidth >= 480) {
