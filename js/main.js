@@ -31,7 +31,6 @@ function toggleMobileMenu() {
       mainNavBar.classList.remove("fadeIn");
 
       mobileMenuTimer = setTimeout(() => {
-        console.log("timer zu");
         backdrop.classList.remove("fadeOutBackdrop");
         backdrop.classList.add("displayNone");
         mainNavBar.classList.add("displayNone");
@@ -59,7 +58,6 @@ function toggleMobileMenu() {
 }
 
 function changeSlide(event) {
-  console.log(activeSlide);
   if (
     !sliderTimer &&
     event.target.classList.contains("btnSliderRight") &&
@@ -121,13 +119,8 @@ function changeSlide(event) {
 }
 
 function toggleMobileMenuOnResize() {
-  console.log("resizeFunction");
-
   if (isMobileMenuOpen) {
-    console.log("1 ");
-
     if (window.innerWidth >= 480) {
-      console.log("2 ");
       isMobileMenuOpen = !isMobileMenuOpen;
 
       body.classList.remove("overflowHidden");
@@ -137,29 +130,19 @@ function toggleMobileMenuOnResize() {
         'url("./images/icon-hamburger.svg")';
       btnMobileMenu.setAttribute("aria-Label", "open menu");
 
-      backdrop.classList.remove("fadeInBackdrop");      
+      backdrop.classList.remove("fadeInBackdrop");
       backdrop.classList.add("displayNone");
       mainNavBar.classList.remove("fadeIn");
       mainNavBar.classList.remove("displayNone");
       document.querySelector(".emptyDiv").style.display = "block";
-
-    } else {
-      console.log("3");
     }
   } else {
-    
     if (window.innerWidth >= 480) {
-      console.log("4");
       mainNavBar.classList.remove("displayNone");
-
-    }else{
-      
+    } else {
       mainNavBar.classList.add("displayNone");
-      console.log("5");
     }
-
   }
-  console.log("isopopen: " + isMobileMenuOpen);
 }
 
 function init() {
